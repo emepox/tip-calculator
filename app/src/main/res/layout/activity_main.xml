@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp"
+
+    >
+
+
+    <EditText
+        android:id="@+id/et_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cost_hint"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How was the service?"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_price" />
+
+    <RadioGroup
+        android:id="@+id/rg_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/rb_amazing"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
+
+        <RadioButton
+            android:id="@+id/rb_amazing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Amazing (20%)" />
+
+        <RadioButton
+            android:id="@+id/rb_good"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Good (18%)" />
+
+        <RadioButton
+            android:id="@+id/rb_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="OK (15%)" />
+
+
+    </RadioGroup>
+
+
+    <Switch
+        android:id="@+id/sw_round"
+        app:layout_constraintTop_toBottomOf="@+id/rg_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Round up tip?"
+
+        />
+
+    <Button
+        android:id="@+id/btn_calculate"
+        app:layout_constraintTop_toBottomOf="@+id/sw_round"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CALCULATE"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_amount"
+        app:layout_constraintTop_toBottomOf="@+id/btn_calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tip Amount"
+        android:gravity="right"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
